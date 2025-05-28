@@ -11,15 +11,9 @@ A Streamlit-based interactive web dashboard for visualizing Black-Scholes option
 4. Stability/sensitivity analysis of parameters
 
 # Demo
+Dashboard DEMO Screenshots
+Call_Dashboard_Graph.png
+Call_Dashboard_Table.png
+Put_Dashboard_Graph.png
+Put_Dashboard_Table.png
 
-
-
----
-
-## 🚀 How to Run
-
-1. **Clone the repository**
-
-```bash
-git clone https://github.com/28Gaurav/Option_price_Dashboard.git
-cd Option_price_Dashboard
