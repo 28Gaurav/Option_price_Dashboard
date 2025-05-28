@@ -3,7 +3,7 @@ import numpy as np
 import plotly.express as px
 import pandas as pd
 from bs_model import *
-from utils import calculate_sensitivity, generate_summary
+from utils import calculate_sensitivity, generate_summary, perturb_sigma
 
 st.set_page_config(page_title="Options Pricing Dashboard", layout="wide")
 st.title("Options Pricing Sensitivity Dashboard")
@@ -65,6 +65,16 @@ df, base_price = calculate_sensitivity(S, K, T, r, sigma, option_type)
 st.dataframe(df.style.format({
     "Base Value": "{:.4f}", "+1% Value": "{:.4f}", "Price Impact": "{:+.4f}"
 }))
+
+#Stability Check for Sigma
+st.subheader("Stability Check: Volatility (σ) Perturbation")
+
+st.caption("Analyzing effect of ±1% change in volatility")
+
+perturb_result = perturb_sigma(S, K, T, r, sigma, option_type)
+st.write(f"- Base Price: **${perturb_result['base_price']:.4f}**")
+st.write(f"- σ (+1%) → Price: **${perturb_result['sigma+1%']:.4f}** (Impact: {perturb_result['impact+1%']:+.4f})")
+st.write(f"- σ (-1%) → Price: **${perturb_result['sigma-1%']:.4f}** (Impact: {perturb_result['impact-1%']:+.4f})")
 
 #Summary
 st.subheader("Summary")
