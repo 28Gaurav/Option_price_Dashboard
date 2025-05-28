@@ -25,3 +25,15 @@ def generate_summary(df, base_price, option_type):
             f"A 1% increase in {row['Parameter']} {direction} the {option_type} price by {abs(percent):.2f}%."
         )
     return summary_lines
+
+def perturb_sigma(S, K, T, r, sigma, option_type='call', perturbation=0.01):
+    base_price = option_price(S, K, T, r, sigma, option_type)
+    increased_sigma_price = option_price(S, K, T, r, sigma * (1 + perturbation), option_type)
+    decreased_sigma_price = option_price(S, K, T, r, sigma * (1 - perturbation), option_type)
+    return {
+        'base_price': base_price,
+        'sigma+1%': increased_sigma_price,
+        'sigma-1%': decreased_sigma_price,
+        'impact+1%': increased_sigma_price - base_price,
+        'impact-1%': decreased_sigma_price - base_price
+    }
