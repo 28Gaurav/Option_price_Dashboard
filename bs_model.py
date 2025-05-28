@@ -57,15 +57,3 @@ def rho(S, K, T, r, sigma, option_type='call'):
         return (K * T * np.exp(-r * T) * norm.cdf(d2))
     else:
         return (-K * T * np.exp(-r * T) * norm.cdf(-d2))
-
-def perturb_sigma(S, K, T, r, sigma, option_type='call', perturbation=0.01):
-    base_price = option_price(S, K, T, r, sigma, option_type)
-    increased_sigma_price = option_price(S, K, T, r, sigma * (1 + perturbation), option_type)
-    decreased_sigma_price = option_price(S, K, T, r, sigma * (1 - perturbation), option_type)
-    return {
-        'base_price': base_price,
-        'sigma+1%': increased_sigma_price,
-        'sigma-1%': decreased_sigma_price,
-        'impact+1%': increased_sigma_price - base_price,
-        'impact-1%': decreased_sigma_price - base_price
-    }
