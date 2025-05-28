@@ -12,8 +12,8 @@ A Streamlit-based interactive web dashboard for visualizing Black-Scholes option
 
 # Demo
 Dashboard DEMO Screenshots
-Call_Dashboard_Graph.png
-Call_Dashboard_Table.png
-Put_Dashboard_Graph.png
-Put_Dashboard_Table.png
+![dashboard demo](Call_Dashboard_Graph.png)
+![dashboard demo](Call_Dashboard_Table.png)
+![dashboard demo](Put_Dashboard_Graph.png)
+![dashboard demo](Put_Dashboard_Table.png)
 
