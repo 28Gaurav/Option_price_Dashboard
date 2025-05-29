@@ -10,10 +10,4 @@ A Streamlit-based interactive web dashboard for visualizing Black-Scholes option
 3. Interactive sliders for input parameters: Stock Price, Strike Price, Time to Maturity, Volatility, Risk-Free Rate
 4. Stability/sensitivity analysis of parameters
 
-# Demo
-Dashboard DEMO Screenshots
-![dashboard demo](Call_Dashboard_Graph.png)
-![dashboard demo](Call_Dashboard_Table.png)
-![dashboard demo](Put_Dashboard_Graph.png)
-![dashboard demo](Put_Dashboard_Table.png)
 
